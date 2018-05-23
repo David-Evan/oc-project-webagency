@@ -1,0 +1,22 @@
+$eye-look_circle-color :           #4692b1;
+$eye-look_border-color :           #fff;
+
+$eye-look_circle-size :            37px;
+$eye-look_border-size :            1px; // relative to the first one
+
+
+.eye-look
+{
+  display: block;
+
+  border-radius:50%;
+  width: $eye-look_circle-size;
+  height: $eye-look_circle-size;
+
+  border: $eye-look_border-size solid $eye-look_border-color;
+  background-color: $eye-look_circle-color;
+
+  text-align: center;
+  color: $eye-look_border-color;
+  line-height: $eye-look_circle-size;
+}

@@ -1,0 +1,44 @@
+$dt-deco_large-circle-color:       #d7d7d7;
+$dt-deco_1st-circle-color:         #5cadd3;
+$dt-deco_2nd-circle-color :        #fff;
+
+$dt-deco_large-circle-size:        62px;
+$dt-deco_1st-circle-size:          14px;
+$dt-deco_2nd-circle-size :         5px; // relative to the first one
+
+$dt-deco_fa-size  :                25px;
+$dt-deco_fa-color :                $primary_color;
+
+.dt-decoration
+{
+  display: block;
+
+  width: $dt-deco_large-circle-size;
+  height: $dt-deco_large-circle-size;
+
+  border-radius:50%;
+  border:1px solid $dt-deco_large-circle-color ;
+
+  text-align: center;
+  line-height: $dt-deco_large-circle-size;
+
+  color: $dt-deco_fa-color;
+  font-size: $dt-deco_fa-size;
+
+    &::before { // FIRST CIRCLE
+      content :'';
+      width: $dt-deco_1st-circle-size;
+      height: $dt-deco_1st-circle-size;
+
+      display: block;
+      position: absolute;
+      margin-top: 19px;
+      margin-left: 50px;
+      border-radius: $dt-deco_1st-circle-size;
+
+      background-color: $dt-deco_1st-circle-color;
+
+    }
+    // SECOND CIRCLE
+    &::before{border: solid $dt-deco_2nd-circle-size $dt-deco_2nd-circle-color;}
+}

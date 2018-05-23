@@ -1,0 +1,25 @@
+
+.header-logo{
+  align-self: center;
+}
+
+
+.header-menu ul{
+  list-style-type: none;
+}
+
+.menu-item {
+  color:$menu_color;
+
+  &:hover {color: $menu_color_alternate;}
+}
+
+.header-menu li{
+  display: inline-block;
+  padding: 45px 15px 45px 15px;
+
+  &.is-active{
+    border-top: solid 3px $primary_color;
+    color:$menu_color_alternate;
+  }
+}

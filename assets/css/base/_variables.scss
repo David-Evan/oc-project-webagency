@@ -1,0 +1,19 @@
+
+// Couleurs principales
+$text_color: #65696e;
+$primary_color : #5cadd3;
+$darken_primary_color: darken($primary_color, 12%);
+
+$alternate_color : #fff;
+
+$title_elements_color: #000;
+$title_elements_color_alternate : #fff;
+
+// Couleurs spéciales
+$menu_color: #8f8f8f;
+$menu_color_alternate : darken($menu_color, 40%); // OR : #575757
+
+// EFFETS
+
+// Transitions
+$default-transition-duration : 0.3s;

@@ -1,0 +1,23 @@
+.btn{
+  display: inline-block;
+  padding: 10px 17px 8px 17px;
+
+  min-width: 0px;
+  line-height: normal;
+
+  border-radius: 3px;
+  border: none;
+  border-bottom: solid 3px $darken_primary_color;
+
+  background-color: $primary_color;
+  color: $alternate_color;
+
+  transition: $default-transition-duration;
+
+  &:hover
+  {
+    background-color: $darken_primary_color;
+  }
+
+  .btn-submit{cursor: pointer;}
+}

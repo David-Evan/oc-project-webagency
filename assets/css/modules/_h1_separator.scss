@@ -1,0 +1,38 @@
+$h1-sep_border-color:             #ebebeb;
+$h1-sep_1st-circle-color:         #5cadd3;
+$h1-sep_2nd-circle-color :        #fff;
+
+$h1-sep_border-length :           140px;
+$h1-sep_1st-circle-size:          14px;
+$h1-sep_2nd-circle-size :         5px; // relative to the first one
+
+@function h1-sep_getMarginLeft(){
+  @return ($h1-sep_border-length/2)-($h1-sep_1st-circle-size/2)-$h1-sep_2nd-circle-size;
+}
+
+.h1-separator{
+  width: $h1-sep_border-length;
+  border-bottom: solid 1px $h1-sep_border-color;
+  margin: auto;
+  margin-bottom: 20px;
+
+  &::after { // FIRST CIRCLE
+    content :'';
+    width: $h1-sep_1st-circle-size;
+    height: $h1-sep_1st-circle-size;
+
+    display: block;
+    position: relative;
+
+    margin-left: h1-sep_getMarginLeft();
+    top:($h1-sep_1st-circle-size/2)+$h1-sep_2nd-circle-size;
+
+    border-radius: $h1-sep_1st-circle-size;
+
+    background-color: $h1-sep_1st-circle-color;
+  }
+
+  &::after{ // SECOND CIRCLE
+    border: solid $h1-sep_2nd-circle-size $h1-sep_2nd-circle-color;
+  }
+}

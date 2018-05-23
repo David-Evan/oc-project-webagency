@@ -1,0 +1,61 @@
+$btn-menu_background-color: 					   	#e5e5e5;
+$btn-menu_font-color : 							      $text_color;
+
+$btn-menu_border-and-arrow-color: 			  #468cad;
+
+$btn-menu_is-active-background-color :    $primary_color;
+$btn-menu_is-active-font-color:					  $alternate_color;
+
+$btn-menu_btn-width :								      100px;
+$btn-menu_btn-height : 							      40px;
+
+$btn-menu_font-size : 										14px;
+
+$btn-menu_border-size: 							      3px;
+
+.menu-btn{
+	display: flex;
+
+	font-family: sans-serif;
+	font-size: $btn-menu_font-size;
+	font-weight: 600;
+
+	list-style-type: none;
+	cursor: pointer;
+}
+
+.arrow{
+	display: none;
+	position: absolute;
+
+	margin: ($btn-menu_btn-height/2 + $btn-menu_font-size/2) 0 0 (($btn-menu_btn-width/2)-($btn-menu_border-size*2));
+	color:$btn-menu_border-and-arrow-color;
+}
+
+.menu-btn-item{
+	display: block;
+
+	width: $btn-menu_btn-width;
+	height: $btn-menu_btn-height;
+
+	text-align: center;
+	line-height: $btn-menu_btn-height;
+	color:$btn-menu_font-color;
+
+	background-color: $btn-menu_background-color;
+
+	border: solid 3px $btn-menu_background-color;
+
+	&:first-child{border-radius: 4px 0 0 4px;}
+	&:last-child{border-radius: 0 4px 4px 0;}
+
+	&.is-active, &:hover{
+		background-color: $btn-menu_is-active-background-color;
+		color: $btn-menu_is-active-font-color;
+		border-color: $btn-menu_is-active-background-color;
+		border-bottom-color:$btn-menu_border-and-arrow-color;
+	}
+
+	&.is-active
+			.arrow{ display: block;}
+		}

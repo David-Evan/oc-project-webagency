@@ -1,0 +1,24 @@
+.l-slider{
+    background-image: url('./images/slider/bg1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.slider-baseline{
+  align-self:center;
+  margin-left: 10%;
+  width: 550px;
+  line-height: 32px;
+
+  .slider-baseline-subtitle{
+    margin-top: 8px;
+  }
+  .slider-baseline-link{
+    margin-top: 15px;
+  }
+}
+
+.slider-baseline, .slider-baseline-title
+{
+    color: $alternate_color;
+}

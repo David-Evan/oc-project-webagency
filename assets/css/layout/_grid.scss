@@ -1,0 +1,54 @@
+
+// HEADER //
+.l-header{
+  margin: 30px 10% 30px 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+// SLIDER
+.l-slider
+{
+  display: flex;
+  height:550px;
+}
+
+// SECTION //
+.section-header{
+  width: 60%;
+  margin:auto;
+  text-align: center;
+}
+
+.section-content{
+  margin: auto;
+  width: 85%
+}
+
+// SERVICES //
+.service-content{
+  display: flex;
+  justify-content:space-between;
+
+  margin-top: 40px;
+}
+  .service-list{
+    padding: 55px 0 0 65px;
+  }
+
+// PROJECT //
+.l-project{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 0 50px 0;
+}
+  .project-menu{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+// CONTACT //
