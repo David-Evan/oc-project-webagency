@@ -42,7 +42,7 @@ $slider_btn-size : 70px;
 .progress-bar::before
 {
   content : '';
-  background-color: $primary-color;
+  background-color: $global_primary-color;
   display: block;
   width: 100%;
   height: 4px;
@@ -101,4 +101,4 @@ $slider_btn-size : 70px;
   }
 }
 
-.slider-baseline, .slider-baseline-title{color: $alternate_color;}
+.slider-baseline, .slider-baseline-title{color: $global_alternate-text-color;}

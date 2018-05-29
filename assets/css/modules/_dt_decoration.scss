@@ -1,5 +1,5 @@
 $dt-deco_large-circle-color:       #d7d7d7;
-$dt-deco_1st-circle-color:         #5cadd3;
+$dt-deco_1st-circle-color:         $global_primary-color;
 $dt-deco_2nd-circle-color :        #fff;
 
 $dt-deco_large-circle-size:        62px;
@@ -7,7 +7,7 @@ $dt-deco_1st-circle-size:          14px;
 $dt-deco_2nd-circle-size :         5px; // relative to the first one
 
 $dt-deco_fa-size  :                25px;
-$dt-deco_fa-color :                $primary_color;
+$dt-deco_fa-color :                $global_primary-color;
 
 .dt-decoration
 {
@@ -27,17 +27,17 @@ $dt-deco_fa-color :                $primary_color;
 
     &::before { // FIRST CIRCLE
       content :'';
-      width: $dt-deco_1st-circle-size;
-      height: $dt-deco_1st-circle-size;
-
       display: block;
+
       position: absolute;
       margin-top: 19px;
       margin-left: 50px;
+
+      width: $dt-deco_1st-circle-size;
+      height: $dt-deco_1st-circle-size;
+
       border-radius: $dt-deco_1st-circle-size;
-
       background-color: $dt-deco_1st-circle-color;
-
     }
     // SECOND CIRCLE
     &::before{border: solid $dt-deco_2nd-circle-size $dt-deco_2nd-circle-color;}

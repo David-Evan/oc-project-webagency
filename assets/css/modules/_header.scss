@@ -16,11 +16,10 @@
   .menu-item {
     display: block;
 
-    color:$menu_color;
+    color:$global_menu-text-color;
     border-top: solid 3px #fff;
 
-    a{
-       display: block;
+    a{ display: block;
        padding: 45px 15px 45px 15px;
     }
     &.is-active{@include createMenuBorder();}

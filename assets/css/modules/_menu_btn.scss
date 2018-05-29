@@ -1,10 +1,10 @@
 $btn-menu_background-color: 					   	#e5e5e5;
-$btn-menu_font-color : 							      $text_color;
+$btn-menu_font-color : 							      $global_primary-text-color;
 
-$btn-menu_border-and-arrow-color: 			  #468cad;
+$btn-menu_border-and-arrow-color: 			  darken($global_primary-color, 12%);
 
-$btn-menu_is-active-background-color :    $primary_color;
-$btn-menu_is-active-font-color:					  $alternate_color;
+$btn-menu_is-active-background-color :    $global_primary-color;
+$btn-menu_is-active-font-color:					  $global_alternate-text-color;
 
 $btn-menu_btn-width :								      100px;
 $btn-menu_btn-height : 							      40px;

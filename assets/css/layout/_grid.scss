@@ -1,32 +1,15 @@
 
 // HEADER //
-.l-header{
-  position: fixed;
-  top: 0; right: 0;
-
+.layout{
   display: flex;
-  justify-content: space-between;
-
-  width: 100%;
-  height: 143px;
-
-  z-index:99;
+  justify-content:space-between;
 }
-
-// SLIDER
-.l-slider
-{
-  display: flex;
-  height:550px;
-
-  margin-top: 143px;
-}
-
-// SECTION //
+/* SECTION */
 .section-header{
   width: 60%;
   margin:auto;
   text-align: center;
+  flex-direction: column;
 }
 
 .section-content{
@@ -34,18 +17,30 @@
   width: 85%
 }
 
+
+.l-header{
+  position: fixed;
+  top: 0; right: 0;
+  width: 100%;
+  height: 143px;
+
+  z-index:99;
+}
+
+// SLIDER
+.l-slider{
+  margin-top: 143px;
+  height:550px;
+}
 // SERVICES //
 .service-content{
   display: flex;
   justify-content:space-between;
-
   margin-top: 40px;
 }
 
 // PROJECT //
 .l-project{
-  display: flex;
-  justify-content: center;
   flex-direction: column;
   padding: 30px 0 50px 0;
 }
@@ -57,8 +52,6 @@
     margin-bottom: 50px;
   }
 
-// CONTACT //
-
 // SPECIAL (anchor)
 /* fix anchor with fixed menu */
 #Services:target, #Projects:target, #Contact:target {
@@ -66,13 +59,6 @@
     margin-top: -155px;
     background-clip: content-box;
 }
-#Projects:target .section-header
-{
+#Projects:target .section-header{
   padding-top: 30px;
-}
-
-/**/
-.anchor {
-  position: absolute;
-  top: 0; right: 0;
 }

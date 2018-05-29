@@ -1,12 +1,13 @@
 
+// ------------- MIXIN -------------//
 // Create a border for the menu. If $border-top = false, create a bottom border.
-@mixin createMenuBorder($border-top : true, $size:3px, $border-color : $primary_color, $hover-color : $primary_color , $text-color : $menu_color_alternate) {
+@mixin createMenuBorder($border-top : true, $size:3px, $border-color : $global_primary-color, $hover-color : $global_primary-color , $text-color : $global_menu-alternate-text-color) {
   color:$text-color;
   @if $border-top{border-top: solid $size $border-color;}
   @else {border-bottom: solid $size $border-color;}
 }
 
 // Remove a border = create a white border
-@mixin removeMenuBorder($border-top : true, $size:3px, $text-color : $menu_color){
-    @include createMenuBorder($border-top, 3px, #fff, $primary_color, $text-color);
+@mixin removeMenuBorder($border-top : true, $size:3px, $text-color : $global_menu-text-color){
+    @include createMenuBorder($border-top, 3px, #fff, $global_primary-color, $text-color);
 }

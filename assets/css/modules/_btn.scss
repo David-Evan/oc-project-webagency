@@ -1,3 +1,4 @@
+
 .btn{
   display: inline-block;
   padding: 10px 17px 8px 17px;
@@ -7,15 +8,15 @@
 
   border-radius: 3px;
   border: none;
-  border-bottom: solid 3px $darken_primary_color;
+  border-bottom: solid 3px $global_darken-primary-color;
 
-  background-color: $primary_color;
-  color: $alternate_color;
+  background-color: $global_primary-color;
+  color: $global_alternate-text-color;
   font-weight: 600;
 
-  transition: $default-transition-duration;
+  transition: $global_default-transition-duration;
 
-  &:hover{background-color: $darken_primary_color;}
+  &:hover{background-color: $global_darken-primary-color;}
 
   &.btn-submit{cursor: pointer;}
 }

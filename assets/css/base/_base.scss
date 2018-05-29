@@ -6,8 +6,8 @@ html{
   font-family: Roboto, sans-serif;
   font-size: 0.90em;
   line-height: 24px;
-  color: $text_color;
-  background-color: #ffffff;
+  color: $global_primary-text-color;
+  background-color: $global_background-color;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -25,25 +25,25 @@ a{
 
 /* TITLES*/
 h1{
-  color: $title_elements_color;
-  font-size: 2em;
+  color: $global_h1-text-color;
+  font-size: $global_h1-font-size;
   text-transform: uppercase;
 }
-h2{color: $title_elements_color;}
+h2{color: $global_h1-text-color;}
 
 /* IMPORTANTS */
-strong{color: $primary_color;}
+strong{color: $global_primary-color;}
 .alt-strong{color: inherit;}
 
 em{
   font-style: normal;
   font-weight: 600;
-  color: #fff;
+  color: $global_em-text-color;
 }
 
 /* OTHERS */
 dt{
-  color: $title_elements_color;
+  color: $global_h1-text-color;
   font-size: 1.3em;
   font-weight: 700;
 }
@@ -58,7 +58,7 @@ input, textarea{
   min-width: 320px;
   min-height: 35px;
 
-  border: solid #cccccc 1px;
+  border: solid $global_form-border-color 1px;
   border-radius: 3px;
 
   font-family: Roboto;
@@ -68,9 +68,14 @@ input, textarea{
   margin-top: 16px;
 }
 ::placeholder {
-    color: #999999;
+    color: $global_form-placeholder-color;
     opacity: 1; /* Firefox */
 }
 textarea{
   padding-top: 12px;
+}
+
+.anchor {
+  position: absolute;
+  top: 0; right: 0;
 }

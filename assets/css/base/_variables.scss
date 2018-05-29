@@ -1,19 +1,30 @@
 
-// Couleurs principales
-$text_color:                       #65696e;
-$primary_color :                   #5cadd3;
-$darken_primary_color:             darken($primary_color, 12%);
 
-$alternate_color :                 #fff;
+// Text colors
+$global_primary-text-color:                      #65696e;
+$global_alternate-text-color :                   #fff;
 
-$title_elements_color:             #000;
-$title_elements_color_alternate :  #fff;
+// Theme colors
+$global_primary-color :                          #5cadd3;
+$global_darken-primary-color:                    darken($global_primary-color, 12%);
 
-$global_menu-hover-color :         $primary_color;
-// Couleurs spéciales
-$menu_color:                       #8f8f8f;
-$menu_color_alternate :            darken($menu_color, 40%); // OR : #575757
-// EFFETS
+$global_background-color :                       #fff;
+
+//Title Colors
+$global_h1-text-color:                           #000;
+$global_h1-alternate-text-color :                #fff;
+$global_h1-font-size:                            2em;
+
+//Menu colors
+$global_menu-hover-color :                       $global_primary-color;
+$global_menu-text-color:                         #8f8f8f;
+$global_menu-alternate-text-color :              darken($global_menu-text-color, 40%); // OR : #575757
 
 // Transitions
-$default-transition-duration : 0.3s;
+$global_default-transition-duration :            0.3s;
+// Forms
+$global_form-border-color:                       #ccc;
+$global_form-placeholder-color:                  #999;
+
+// Others
+$global_em-text-color:                           $global_alternate-text-color;
