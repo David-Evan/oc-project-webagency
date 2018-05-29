@@ -1,0 +1,72 @@
+
+/* HEADER MENU */
+// Item Home is allways active except when another one is selected
+#Services:target ~ .l-header #Item-Services,
+#Projects:target ~ .l-header #Item-Projects,
+#Contact:target ~ .l-header #Item-Contact,{
+  @include createMenuBorder();
+  &:hover{color:$global_menu-hover-color}
+}
+
+#Services:target ~ .l-header,
+#Projects:target ~ .l-header,
+#Contact:target ~ .l-header{
+    & #Item-Home{
+      @include removeMenuBorder();
+      &:hover{color:$global_menu-hover-color}
+    }
+  }
+
+
+// Select project Menu when a category is selected
+#Cat-Allworks:target,
+#Cat-Creative:target,
+#Cat-Corporate:target,
+#Cat-Portfolio:target,{
+	&~.l-header {
+		#Item-Home{
+			@include removeMenuBorder();
+			&:hover{color:$global_menu-hover-color}
+		}
+		#Item-Projects{
+			@include createMenuBorder();
+			&:hover{color:$global_menu-hover-color}
+		}
+	}
+}
+
+/* PROJECTS
+- Manage menu-btn - Same as header menu :
+- Allworks category is allways selected except when another category is seleted
+*/
+#Cat-Creative:target ~ #Projects .project-content .project-menu ul #MenuBtnCreative,
+#Cat-Corporate:target ~ #Projects .project-content .project-menu ul #MenuBtnCorporate,
+#Cat-Portfolio:target ~ #Projects .project-content .project-menu ul #MenuBtnPortfolio,
+{
+	background-color: $btn-menu_is-active-background-color;
+	color: $btn-menu_is-active-font-color;
+	border-color: $btn-menu_is-active-background-color;
+	border-bottom-color:$btn-menu_border-and-arrow-color;
+	.arrow{display: block;}
+}
+
+/* Display normal button when a category is selected */
+#Cat-Creative:target,
+#Cat-Portfolio:target,
+#Cat-Corporate:target
+{
+  ~ #Projects .project-content .project-menu ul #MenuBtnAllworks{
+    color:$btn-menu_font-color;
+    background-color: $btn-menu_background-color;
+    border: solid 3px $btn-menu_background-color;
+    .arrow{display: none;}
+  }
+}
+
+/* DISPLAY ELEMENTS FUNCTION OF CATEGORY */
+#Cat-Creative:target ~ #Projects .project-content .project-list .project-elements:not(.category-creative),
+#Cat-Corporate:target ~ #Projects .project-content .project-list .project-elements:not(.category-corporate),
+#Cat-Portfolio:target ~ #Projects .project-content .project-list .project-elements:not(.category-portfolio)
+{
+  display: none;
+}

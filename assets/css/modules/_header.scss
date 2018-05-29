@@ -1,30 +1,28 @@
 
-
 .l-header{background-color: #fff;}
 
-  .header-logo{
-    position: absolute;
-    left: 10%; top:65px;
-  }
+  .header-logo{margin: 65px 0 0 10%;}
 
-  .header-menu ul{
+  .header-menu{
+    margin:34px 30% 0 0;
+
+    display: flex;
+    justify-content: space-around;
+
     list-style-type: none;
-    position: absolute;
-    right: 10%; top: 40px;
+    text-align: center;
   }
 
   .menu-item {
+    display: block;
+
     color:$menu_color;
+    border-top: solid 3px #fff;
 
-    &:hover {color: $menu_color_alternate;}
-  }
-
-  .header-menu li{
-    display: inline-block;
-    padding: 45px 15px 45px 15px;
-
-    &.is-active{
-      border-top: solid 3px $primary_color;
-      color:$menu_color_alternate;
+    a{
+       display: block;
+       padding: 45px 15px 45px 15px;
     }
+    &.is-active{@include createMenuBorder();}
+    &:hover{color:$global_menu-hover-color}
   }

@@ -21,7 +21,9 @@ $btn-menu_border-size: 							      3px;
 	font-weight: 600;
 
 	list-style-type: none;
-	cursor: pointer;
+
+	& li:first-of-type{border-radius: 4px 0 0 4px;}
+	& li:last-of-type{border-radius: 0 4px 4px 0;}
 }
 
 .arrow{
@@ -46,16 +48,14 @@ $btn-menu_border-size: 							      3px;
 
 	border: solid 3px $btn-menu_background-color;
 
-	&:first-child{border-radius: 4px 0 0 4px;}
-	&:last-child{border-radius: 0 4px 4px 0;}
-
 	&.is-active, &:hover{
 		background-color: $btn-menu_is-active-background-color;
 		color: $btn-menu_is-active-font-color;
 		border-color: $btn-menu_is-active-background-color;
 		border-bottom-color:$btn-menu_border-and-arrow-color;
 	}
+	&.is-active .arrow{display: block;}
+	a { display: block;width: 100%; height: 100%}
+}
 
-	&.is-active
-			.arrow{ display: block;}
-		}
+.menu-btn-anchor{visibility: hidden;position: fixed; top: 0; right: 0;}

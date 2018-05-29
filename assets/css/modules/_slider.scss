@@ -1,13 +1,96 @@
-.l-slider{
-    background-image: url('./images/slider/bg1.jpg');
-    background-position: center;
-    background-size: cover;
+$slider_animation-duration : 12s;
+$slider_btn-size : 70px;
+
+/*START SLIDERS ANIMATIONS */
+@keyframes sliderAnimation {
+0%, 35% {margin-left: 0px;}
+50%, 85%{margin-left:100%;}
+100% {margin-left:200%}
 }
 
+@keyframes progressBarAnimation {
+  0% {width: 0px;}
+  100% {width: 100%;}
+}
+/* END SLIDERS ANIMATIONS */
+
+.slider-st-fig, .slider-nd-fig{
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+}
+
+  .slider-st-fig{background-image: url("./images/slider/bg1.jpg");}
+  .slider-nd-fig{
+    background-image: url("./images/slider/bg2.jpg");
+    left: -100%;
+    animation: sliderAnimation $slider_animation-duration ease infinite;
+  }
+
+.progress-bar{
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0,0,0,0.3);
+  position:absolute;
+  z-index: 10;
+  margin-top: 546px;
+}
+
+.progress-bar::before
+{
+  content : '';
+  background-color: $primary-color;
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  z-index: 20;
+  animation: progressBarAnimation $slider_animation-duration/2 linear infinite;
+}
+
+.slider-btn{
+  font-size: 2.25em;
+  color:#fff;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+  line-height: $slider_btn-size;
+
+  display: block;
+  width: $slider_btn-size;
+  height: $slider_btn-size;
+  background-color: rgba(0,0,0,0.3);
+
+  position: absolute;
+  margin-top: 250px;
+  overflow: hidden;
+
+  z-index: 30;
+
+  &.slider-after{
+    border-radius: 35px 0 0 35px;
+    right: -22px;
+  }
+
+  &.slider-before{
+    border-radius: 0 35px 35px 0;
+    left: -22px;
+  }
+}
+.slider-control{
+  visibility: hidden;
+}
+
+/* SLIDERS - STYLE */
+
 .slider-baseline{
-  align-self:center;
+  margin-top: 180px;
   margin-left: 10%;
   width: 550px;
+
   line-height: 32px;
 
   .slider-baseline-subtitle{
@@ -18,7 +101,4 @@
   }
 }
 
-.slider-baseline, .slider-baseline-title
-{
-    color: $alternate_color;
-}
+.slider-baseline, .slider-baseline-title{color: $alternate_color;}

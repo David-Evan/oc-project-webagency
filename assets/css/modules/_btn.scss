@@ -11,13 +11,11 @@
 
   background-color: $primary_color;
   color: $alternate_color;
+  font-weight: 600;
 
   transition: $default-transition-duration;
 
-  &:hover
-  {
-    background-color: $darken_primary_color;
-  }
+  &:hover{background-color: $darken_primary_color;}
 
-  .btn-submit{cursor: pointer;}
+  &.btn-submit{cursor: pointer;}
 }

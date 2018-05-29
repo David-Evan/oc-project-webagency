@@ -1,0 +1,38 @@
+@media screen and (max-width: 740px){
+  #Services:target ~ .l-header #Item-Services,
+  #Projects:target ~ .l-header #Item-Projects,
+  #Contact:target ~ .l-header #Item-Contact{
+    border-top: none;
+    @include createMenuBorder(false);
+    &:hover{color:$global_menu-hover-color}
+  }
+
+  #Services:target ~ .l-header,
+  #Projects:target ~ .l-header,
+  #Contact:target ~ .l-header{
+    & #Item-Home{
+      border-top: none;
+      @include removeMenuBorder(false);
+      &:hover{color:$global_menu-hover-color}
+    }
+  }
+
+/***** Menu Btn ****/
+  #Cat-Allworks:target,
+  #Cat-Creative:target,
+  #Cat-Corporate:target,
+  #Cat-Portfolio:target,{
+  	&~.l-header {
+  		#Item-Home{
+        border-top: none;
+        @include removeMenuBorder(false);
+        &:hover{color:$global_menu-hover-color}
+  		}
+  		#Item-Projects{
+        border-top: none;
+        @include createMenuBorder(false);
+        &:hover{color:$global_menu-hover-color}
+  		}
+  	}
+  }
+}

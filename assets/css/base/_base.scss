@@ -8,12 +8,19 @@ html{
   line-height: 24px;
   color: $text_color;
   background-color: #ffffff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* LINKS */
 a{
   text-decoration: none;
   color: inherit;
+  &.full-size  {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /* TITLES*/

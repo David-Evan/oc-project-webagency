@@ -1,0 +1,75 @@
+
+/* Big desktop screen (Full HD) */
+/* Tiny optimisation */
+@media screen and (min-width:1600px){
+  /**** BASE ****/
+    .section-header{width: 45%;}
+    .section-content{width: 72%}
+}
+
+@media screen and (min-width:1800px){
+  /**** BASE ****/
+    .section-header{width: 40%;}
+    .section-content{width: 67%}
+}
+
+/* Little Desktop screens */
+@media screen and (max-width: 1100px){
+
+/**** BASE ****/
+  .section-header{width: 75%;}
+  .section-content{width: 96%}
+
+/**** SERVICES ****/
+  .service-list{margin-left: 80px; transition-duration: 0.5s;}
+}
+
+/* Tablets screens */
+@media screen and (max-width:900px){
+  .service-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .service-list{width: 80%; margin-left: 5%; padding-top: 30px;}
+}
+
+/* Mobiles screens */
+@media screen and (max-width: 740px) {
+
+/**** BASE ****/
+
+  .section-header{width: 85%;}
+
+/**** HEADERS ****/
+  .header-logo {margin:auto; margin-top: 15px;}
+
+  .l-header{
+    flex-direction: column;
+    align-items: center;}
+
+  .header-menu {margin:auto;}
+
+  .menu-item{
+      border-top: none;
+      border-bottom: solid 3px #fff;
+
+      a{padding: 15px 33px 15px 33px}
+
+      &.is-active
+      {
+        border-top: none;
+        @include createMenuBorder(false);
+        &:hover{color:$global_menu-hover-color}
+      }
+    }
+
+/**** SLIDERS ****/
+
+/**** CONTACT ****/
+  .contact-area {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0; right: 0;
+  }
+}

@@ -1,0 +1,12 @@
+
+// Create a border for the menu. If $border-top = false, create a bottom border.
+@mixin createMenuBorder($border-top : true, $size:3px, $border-color : $primary_color, $hover-color : $primary_color , $text-color : $menu_color_alternate) {
+  color:$text-color;
+  @if $border-top{border-top: solid $size $border-color;}
+  @else {border-bottom: solid $size $border-color;}
+}
+
+// Remove a border = create a white border
+@mixin removeMenuBorder($border-top : true, $size:3px, $text-color : $menu_color){
+    @include createMenuBorder($border-top, 3px, #fff, $primary_color, $text-color);
+}

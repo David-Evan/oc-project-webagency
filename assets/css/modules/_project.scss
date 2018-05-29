@@ -12,6 +12,7 @@ $pjct-infos_height : 62px;
   max-width: 1400px;
 
   justify-content: center;
+
 }
 
 .project-elements {
@@ -40,7 +41,7 @@ $pjct-infos_height : 62px;
   line-height: normal;
   background-color: rgba(0,0,0,0.3);
   p{
-    padding-left: 10px;
+    padding: 10px 0 0 10px;
   }
   opacity: 0;
   transition-property: all;

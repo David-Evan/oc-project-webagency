@@ -13,12 +13,20 @@ html {
   line-height: 24px;
   color: #65696e;
   background-color: #ffffff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* LINKS */
 a {
   text-decoration: none;
   color: inherit;
+}
+
+a.full-size {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* TITLES*/
@@ -86,10 +94,10 @@ textarea {
 \*----------------------------*/
 .l-header {
   position: fixed;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
-  top: 0px;
-  right: 0px;
   width: 100%;
   height: 143px;
   z-index: 99;
@@ -118,10 +126,6 @@ textarea {
   margin-top: 40px;
 }
 
-.service-list {
-  padding: 55px 0 0 65px;
-}
-
 .l-project {
   display: flex;
   justify-content: center;
@@ -136,9 +140,22 @@ textarea {
   margin-bottom: 50px;
 }
 
-#services:target, #portfolio:target {
+/* fix anchor with fixed menu */
+#Services:target, #Projects:target, #Contact:target {
   padding-top: 155px;
   margin-top: -155px;
+  background-clip: content-box;
+}
+
+#Projects:target .section-header {
+  padding-top: 30px;
+}
+
+/**/
+.anchor {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /*----------------------------*\
@@ -149,41 +166,48 @@ textarea {
 }
 
 .header-logo {
-  position: absolute;
-  left: 10%;
-  top: 65px;
+  margin: 65px 0 0 10%;
 }
 
-.header-menu ul {
+.header-menu {
+  margin: 34px 30% 0 0;
+  display: flex;
+  justify-content: space-around;
   list-style-type: none;
-  position: absolute;
-  right: 10%;
-  top: 40px;
+  text-align: center;
 }
 
 .menu-item {
+  display: block;
   color: #8f8f8f;
+  border-top: solid 3px #fff;
 }
 
-.menu-item:hover {
-  color: #292929;
-}
-
-.header-menu li {
-  display: inline-block;
+.menu-item a {
+  display: block;
   padding: 45px 15px 45px 15px;
 }
 
-.header-menu li.is-active {
-  border-top: solid 3px #5cadd3;
+.menu-item.is-active {
   color: #292929;
+  border-top: solid 3px #5cadd3;
+}
+
+.menu-item:hover {
+  color: #5cadd3;
+}
+
+.service-list {
+  padding: 55px 0 0 65px;
+  margin-left: 130px;
 }
 
 .service-list dd {
   padding-bottom: 30px;
+  text-align: justify;
 }
 
-.service-list .dt-decoration {
+.dt-decoration {
   position: absolute;
   margin: -20px 0 0 -85px;
 }
@@ -255,7 +279,7 @@ textarea {
 }
 
 .project-infos p {
-  padding-left: 10px;
+  padding: 10px 0 0 10px;
 }
 
 .eye-look {
@@ -273,14 +297,102 @@ textarea {
   height: 60px;
 }
 
-.l-slider {
-  background-image: url("./images/slider/bg1.jpg");
-  background-position: center;
-  background-size: cover;
+/*START SLIDERS ANIMATIONS */
+@keyframes sliderAnimation {
+  0%, 35% {
+    margin-left: 0px;
+  }
+  50%, 85% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 200%;
+  }
 }
 
+@keyframes progressBarAnimation {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* END SLIDERS ANIMATIONS */
+.slider-st-fig, .slider-nd-fig {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-st-fig {
+  background-image: url("./images/slider/bg1.jpg");
+}
+
+.slider-nd-fig {
+  background-image: url("./images/slider/bg2.jpg");
+  left: -100%;
+  animation: sliderAnimation 12s ease infinite;
+}
+
+.progress-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 10;
+  margin-top: 546px;
+}
+
+.progress-bar::before {
+  content: '';
+  background-color: #5cadd3;
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  z-index: 20;
+  animation: progressBarAnimation 6s linear infinite;
+}
+
+.slider-btn {
+  font-size: 2.25em;
+  color: #fff;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+  line-height: 70px;
+  display: block;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  margin-top: 250px;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.slider-btn.slider-after {
+  border-radius: 35px 0 0 35px;
+  right: -22px;
+}
+
+.slider-btn.slider-before {
+  border-radius: 0 35px 35px 0;
+  left: -22px;
+}
+
+.slider-control {
+  visibility: hidden;
+}
+
+/* SLIDERS - STYLE */
 .slider-baseline {
-  align-self: center;
+  margin-top: 180px;
   margin-left: 10%;
   width: 550px;
   line-height: 32px;
@@ -304,7 +416,14 @@ textarea {
   font-size: 14px;
   font-weight: 600;
   list-style-type: none;
-  cursor: pointer;
+}
+
+.menu-btn li:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.menu-btn li:last-of-type {
+  border-radius: 0 4px 4px 0;
 }
 
 .arrow {
@@ -325,14 +444,6 @@ textarea {
   border: solid 3px #e5e5e5;
 }
 
-.menu-btn-item:first-child {
-  border-radius: 4px 0 0 4px;
-}
-
-.menu-btn-item:last-child {
-  border-radius: 0 4px 4px 0;
-}
-
 .menu-btn-item.is-active, .menu-btn-item:hover {
   background-color: #5cadd3;
   color: #fff;
@@ -342,6 +453,19 @@ textarea {
 
 .menu-btn-item.is-active .arrow {
   display: block;
+}
+
+.menu-btn-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-btn-anchor {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 .h1-separator {
@@ -377,6 +501,7 @@ textarea {
   border-bottom: solid 3px #3392be;
   background-color: #5cadd3;
   color: #fff;
+  font-weight: 600;
   transition: 0.3s;
 }
 
@@ -384,7 +509,7 @@ textarea {
   background-color: #3392be;
 }
 
-.btn .btn-submit {
+.btn.btn-submit {
   cursor: pointer;
 }
 
@@ -426,4 +551,259 @@ textarea {
   text-align: center;
   color: #fff;
   line-height: 37px;
+}
+
+/*----------------------------*\
+    RESPONSIVE
+\*----------------------------*/
+/* Big desktop screen (Full HD) */
+/* Tiny optimisation */
+@media screen and (min-width: 1600px) {
+  /**** BASE ****/
+  .section-header {
+    width: 45%;
+  }
+  .section-content {
+    width: 72%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  /**** BASE ****/
+  .section-header {
+    width: 40%;
+  }
+  .section-content {
+    width: 67%;
+  }
+}
+
+/* Little Desktop screens */
+@media screen and (max-width: 1100px) {
+  /**** BASE ****/
+  .section-header {
+    width: 75%;
+  }
+  .section-content {
+    width: 96%;
+  }
+  /**** SERVICES ****/
+  .service-list {
+    margin-left: 80px;
+    transition-duration: 0.5s;
+  }
+}
+
+/* Tablets screens */
+@media screen and (max-width: 900px) {
+  .service-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .service-list {
+    width: 80%;
+    margin-left: 5%;
+    padding-top: 30px;
+  }
+}
+
+/* Mobiles screens */
+@media screen and (max-width: 740px) {
+  /**** BASE ****/
+  .section-header {
+    width: 85%;
+  }
+  /**** HEADERS ****/
+  .header-logo {
+    margin: auto;
+    margin-top: 15px;
+  }
+  .l-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-menu {
+    margin: auto;
+  }
+  .menu-item {
+    border-top: none;
+    border-bottom: solid 3px #fff;
+  }
+  .menu-item a {
+    padding: 15px 33px 15px 33px;
+  }
+  .menu-item.is-active {
+    border-top: none;
+    color: #292929;
+    border-bottom: solid 3px #5cadd3;
+  }
+  .menu-item.is-active:hover {
+    color: #5cadd3;
+  }
+  /**** SLIDERS ****/
+  /**** CONTACT ****/
+  .contact-area {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+/*----------------------------*\
+    EVENTS
+\*----------------------------*/
+/* HEADER MENU */
+#Services:target ~ .l-header #Item-Services,
+#Projects:target ~ .l-header #Item-Projects,
+#Contact:target ~ .l-header #Item-Contact {
+  color: #292929;
+  border-top: solid 3px #5cadd3;
+}
+
+#Services:target ~ .l-header #Item-Services:hover,
+#Projects:target ~ .l-header #Item-Projects:hover,
+#Contact:target ~ .l-header #Item-Contact:hover {
+  color: #5cadd3;
+}
+
+#Services:target ~ .l-header #Item-Home,
+#Projects:target ~ .l-header #Item-Home,
+#Contact:target ~ .l-header #Item-Home {
+  color: #8f8f8f;
+  border-top: solid 3px #fff;
+}
+
+#Services:target ~ .l-header #Item-Home:hover,
+#Projects:target ~ .l-header #Item-Home:hover,
+#Contact:target ~ .l-header #Item-Home:hover {
+  color: #5cadd3;
+}
+
+#Cat-Allworks:target ~ .l-header #Item-Home,
+#Cat-Creative:target ~ .l-header #Item-Home,
+#Cat-Corporate:target ~ .l-header #Item-Home,
+#Cat-Portfolio:target ~ .l-header #Item-Home {
+  color: #8f8f8f;
+  border-top: solid 3px #fff;
+}
+
+#Cat-Allworks:target ~ .l-header #Item-Home:hover,
+#Cat-Creative:target ~ .l-header #Item-Home:hover,
+#Cat-Corporate:target ~ .l-header #Item-Home:hover,
+#Cat-Portfolio:target ~ .l-header #Item-Home:hover {
+  color: #5cadd3;
+}
+
+#Cat-Allworks:target ~ .l-header #Item-Projects,
+#Cat-Creative:target ~ .l-header #Item-Projects,
+#Cat-Corporate:target ~ .l-header #Item-Projects,
+#Cat-Portfolio:target ~ .l-header #Item-Projects {
+  color: #292929;
+  border-top: solid 3px #5cadd3;
+}
+
+#Cat-Allworks:target ~ .l-header #Item-Projects:hover,
+#Cat-Creative:target ~ .l-header #Item-Projects:hover,
+#Cat-Corporate:target ~ .l-header #Item-Projects:hover,
+#Cat-Portfolio:target ~ .l-header #Item-Projects:hover {
+  color: #5cadd3;
+}
+
+/* PROJECTS
+- Manage menu-btn - Same as header menu :
+- Allworks category is allways selected except when another category is seleted
+*/
+#Cat-Creative:target ~ #Projects .project-content .project-menu ul #MenuBtnCreative,
+#Cat-Corporate:target ~ #Projects .project-content .project-menu ul #MenuBtnCorporate,
+#Cat-Portfolio:target ~ #Projects .project-content .project-menu ul #MenuBtnPortfolio {
+  background-color: #5cadd3;
+  color: #fff;
+  border-color: #5cadd3;
+  border-bottom-color: #468cad;
+}
+
+#Cat-Creative:target ~ #Projects .project-content .project-menu ul #MenuBtnCreative .arrow,
+#Cat-Corporate:target ~ #Projects .project-content .project-menu ul #MenuBtnCorporate .arrow,
+#Cat-Portfolio:target ~ #Projects .project-content .project-menu ul #MenuBtnPortfolio .arrow {
+  display: block;
+}
+
+/* Display normal button when a category is selected */
+#Cat-Creative:target ~ #Projects .project-content .project-menu ul #MenuBtnAllworks,
+#Cat-Portfolio:target ~ #Projects .project-content .project-menu ul #MenuBtnAllworks,
+#Cat-Corporate:target ~ #Projects .project-content .project-menu ul #MenuBtnAllworks {
+  color: #65696e;
+  background-color: #e5e5e5;
+  border: solid 3px #e5e5e5;
+}
+
+#Cat-Creative:target ~ #Projects .project-content .project-menu ul #MenuBtnAllworks .arrow,
+#Cat-Portfolio:target ~ #Projects .project-content .project-menu ul #MenuBtnAllworks .arrow,
+#Cat-Corporate:target ~ #Projects .project-content .project-menu ul #MenuBtnAllworks .arrow {
+  display: none;
+}
+
+/* DISPLAY ELEMENTS FUNCTION OF CATEGORY */
+#Cat-Creative:target ~ #Projects .project-content .project-list .project-elements:not(.category-creative),
+#Cat-Corporate:target ~ #Projects .project-content .project-list .project-elements:not(.category-corporate),
+#Cat-Portfolio:target ~ #Projects .project-content .project-list .project-elements:not(.category-portfolio) {
+  display: none;
+}
+
+@media screen and (max-width: 740px) {
+  #Services:target ~ .l-header #Item-Services,
+  #Projects:target ~ .l-header #Item-Projects,
+  #Contact:target ~ .l-header #Item-Contact {
+    border-top: none;
+    color: #292929;
+    border-bottom: solid 3px #5cadd3;
+  }
+  #Services:target ~ .l-header #Item-Services:hover,
+  #Projects:target ~ .l-header #Item-Projects:hover,
+  #Contact:target ~ .l-header #Item-Contact:hover {
+    color: #5cadd3;
+  }
+  #Services:target ~ .l-header #Item-Home,
+  #Projects:target ~ .l-header #Item-Home,
+  #Contact:target ~ .l-header #Item-Home {
+    border-top: none;
+    color: #8f8f8f;
+    border-bottom: solid 3px #fff;
+  }
+  #Services:target ~ .l-header #Item-Home:hover,
+  #Projects:target ~ .l-header #Item-Home:hover,
+  #Contact:target ~ .l-header #Item-Home:hover {
+    color: #5cadd3;
+  }
+  /***** Menu Btn ****/
+  #Cat-Allworks:target ~ .l-header #Item-Home,
+  #Cat-Creative:target ~ .l-header #Item-Home,
+  #Cat-Corporate:target ~ .l-header #Item-Home,
+  #Cat-Portfolio:target ~ .l-header #Item-Home {
+    border-top: none;
+    color: #8f8f8f;
+    border-bottom: solid 3px #fff;
+  }
+  #Cat-Allworks:target ~ .l-header #Item-Home:hover,
+  #Cat-Creative:target ~ .l-header #Item-Home:hover,
+  #Cat-Corporate:target ~ .l-header #Item-Home:hover,
+  #Cat-Portfolio:target ~ .l-header #Item-Home:hover {
+    color: #5cadd3;
+  }
+  #Cat-Allworks:target ~ .l-header #Item-Projects,
+  #Cat-Creative:target ~ .l-header #Item-Projects,
+  #Cat-Corporate:target ~ .l-header #Item-Projects,
+  #Cat-Portfolio:target ~ .l-header #Item-Projects {
+    border-top: none;
+    color: #292929;
+    border-bottom: solid 3px #5cadd3;
+  }
+  #Cat-Allworks:target ~ .l-header #Item-Projects:hover,
+  #Cat-Creative:target ~ .l-header #Item-Projects:hover,
+  #Cat-Corporate:target ~ .l-header #Item-Projects:hover,
+  #Cat-Portfolio:target ~ .l-header #Item-Projects:hover {
+    color: #5cadd3;
+  }
 }
