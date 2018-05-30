@@ -293,13 +293,13 @@ textarea {
 /*START SLIDERS ANIMATIONS */
 @keyframes sliderAnimation {
   0%, 35% {
-    margin-left: 0px;
+    left: -100%;
   }
   50%, 85% {
-    margin-left: 100%;
+    left: 0%;
   }
   100% {
-    margin-left: 200%;
+    left: 100%;
   }
 }
 
@@ -309,6 +309,51 @@ textarea {
   }
   100% {
     width: 100%;
+  }
+}
+
+@keyframes controlsAnimation {
+  0%, 49.99% {
+    z-index: -99;
+  }
+  50%, 100% {
+    z-index: 99;
+  }
+}
+
+@keyframes slider1NextAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slider1PreviousAnimation {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slider2PreviousAnimation {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes slider2NextAnimation {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
   }
 }
 
@@ -328,7 +373,7 @@ textarea {
 .slider-nd-fig {
   background-image: url("./images/slider/bg2.jpg");
   left: -100%;
-  animation: sliderAnimation 12s ease infinite;
+  animation: sliderAnimation 14s ease infinite;
 }
 
 .progress-bar {
@@ -349,7 +394,7 @@ textarea {
   height: 4px;
   position: absolute;
   z-index: 20;
-  animation: progressBarAnimation 6s linear infinite;
+  animation: progressBarAnimation 7s linear infinite;
 }
 
 .slider-btn {
@@ -379,8 +424,23 @@ textarea {
   left: -22px;
 }
 
+.slider-btn.sl-2 {
+  animation: controlsAnimation 14s infinite;
+  opacity: 0;
+}
+
 .slider-control {
   visibility: hidden;
+}
+
+.play-button {
+  position: absolute;
+  right: 0;
+  margin: 25px 25px;
+  font-size: 2.25em;
+  color: #fff;
+  opacity: 0.85;
+  display: none;
 }
 
 /* SLIDERS - STYLE */
@@ -701,6 +761,66 @@ textarea {
 #Cat-Corporate:target ~ .l-header #Item-Projects:hover,
 #Cat-Portfolio:target ~ .l-header #Item-Projects:hover {
   color: #5cadd3;
+}
+
+/* SLIDERS
+  - Manage controls, progress-bar and slide function of user interactions
+*/
+/* For slides, controls, and progress-bar when a click is detected:
+ Stop everithing running */
+#sl-st-after:target ~ .slider-nd-fig, #sl-st-before:target ~ .slider-nd-fig, #sl-nd-after:target ~ .slider-nd-fig, #sl-nd-before:target ~ .slider-nd-fig {
+  animation: none;
+}
+
+#sl-st-after:target ~ .progress-bar, #sl-st-before:target ~ .progress-bar, #sl-nd-after:target ~ .progress-bar, #sl-nd-before:target ~ .progress-bar {
+  opacity: 0;
+  transition: 1s;
+}
+
+#sl-st-after:target ~ .progress-bar::before, #sl-st-before:target ~ .progress-bar::before, #sl-nd-after:target ~ .progress-bar::before, #sl-nd-before:target ~ .progress-bar::before {
+  animation: none;
+}
+
+#sl-st-after:target ~ .slider-btn.sl-2, #sl-st-before:target ~ .slider-btn.sl-2, #sl-nd-after:target ~ .slider-btn.sl-2, #sl-nd-before:target ~ .slider-btn.sl-2 {
+  animation: none;
+  z-index: 99;
+}
+
+#sl-st-after:target ~ .play-button, #sl-st-before:target ~ .play-button, #sl-nd-after:target ~ .play-button, #sl-nd-before:target ~ .play-button {
+  display: block;
+  z-index: 100;
+}
+
+#sl-st-before:target ~ .slider-nd-fig {
+  animation: slider1PreviousAnimation 1s ease forwards;
+}
+
+#sl-st-before:target ~ .slider-btn.sl-2 {
+  z-index: 99;
+}
+
+#sl-st-after:target ~ .slider-nd-fig {
+  animation: slider1NextAnimation 1s ease forwards;
+}
+
+#sl-st-after:target ~ .slider-btn.sl-2 {
+  z-index: 99;
+}
+
+#sl-nd-before:target ~ .slider-nd-fig {
+  animation: slider2PreviousAnimation 1s ease forwards;
+}
+
+#sl-nd-before:target ~ .slider-btn.sl-2 {
+  z-index: -99;
+}
+
+#sl-nd-after:target ~ .slider-nd-fig {
+  animation: slider2NextAnimation 1s ease forwards;
+}
+
+#sl-nd-after:target ~ .slider-btn.sl-2 {
+  z-index: -99;
 }
 
 /* PROJECTS

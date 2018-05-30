@@ -1,16 +1,44 @@
-$slider_animation-duration : 12s;
+$slider_animation-duration : 14s;
 $slider_btn-size : 70px;
 
 /*START SLIDERS ANIMATIONS */
+
+
 @keyframes sliderAnimation {
-0%, 35% {margin-left: 0px;}
-50%, 85%{margin-left:100%;}
-100% {margin-left:200%}
+0%, 35% {left: -100%;}
+50%, 85%{left:0%;}
+100% {left:100%}
 }
 
 @keyframes progressBarAnimation {
   0% {width: 0px;}
   100% {width: 100%;}
+}
+
+@keyframes controlsAnimation {
+  0%,49.99%  {z-index: -99}
+  50% , 100%{z-index: 99}
+}
+
+
+@keyframes slider1NextAnimation {
+0% {left: -100%;}
+100% {left:0%}
+}
+
+@keyframes slider1PreviousAnimation {
+0% {left: 100%;}
+100% {left:0%}
+}
+
+@keyframes slider2PreviousAnimation {
+0% {left: 0%;}
+100% {left:-100%}
+}
+
+@keyframes slider2NextAnimation {
+0% {left: 0%;}
+100% {left:100%}
 }
 /* END SLIDERS ANIMATIONS */
 
@@ -22,12 +50,12 @@ $slider_btn-size : 70px;
   background-position: center;
 }
 
-  .slider-st-fig{background-image: url("./images/slider/bg1.jpg");}
-  .slider-nd-fig{
-    background-image: url("./images/slider/bg2.jpg");
-    left: -100%;
-    animation: sliderAnimation $slider_animation-duration ease infinite;
-  }
+.slider-st-fig{background-image: url("./images/slider/bg1.jpg");}
+.slider-nd-fig{
+  background-image: url("./images/slider/bg2.jpg");
+  left: -100%;
+  animation: sliderAnimation $slider_animation-duration ease infinite;
+}
 
 .progress-bar{
   display: block;
@@ -79,13 +107,24 @@ $slider_btn-size : 70px;
     border-radius: 0 35px 35px 0;
     left: -22px;
   }
-}
-.slider-control{
-  visibility: hidden;
-}
 
+  &.sl-2{
+    animation: controlsAnimation $slider_animation-duration infinite;
+    opacity: 0;}
+}
+.slider-control{visibility: hidden;}
+
+.play-button {
+  position: absolute;
+  right: 0;
+  margin: 25px 25px;
+
+  font-size: 2.25em;
+  color: #fff;
+  opacity: 0.85;
+  display: none;
+}
 /* SLIDERS - STYLE */
-
 .slider-baseline{
   margin-top: 180px;
   margin-left: 10%;
@@ -93,12 +132,8 @@ $slider_btn-size : 70px;
 
   line-height: 32px;
 
-  .slider-baseline-subtitle{
-    margin-top: 8px;
-  }
-  .slider-baseline-link{
-    margin-top: 15px;
-  }
+  .slider-baseline-subtitle{margin-top: 8px;}
+  .slider-baseline-link{margin-top: 15px;}
 }
 
 .slider-baseline, .slider-baseline-title{color: $global_alternate-text-color;}

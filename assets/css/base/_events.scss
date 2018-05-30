@@ -35,6 +35,51 @@
 	}
 }
 
+
+/* SLIDERS
+  - Manage controls, progress-bar and slide function of user interactions
+*/
+
+/* For slides, controls, and progress-bar when a click is detected:
+ Stop everithing running */
+#sl-st-after:target, #sl-st-before:target, #sl-nd-after:target, #sl-nd-before:target
+{
+  &~ .slider-nd-fig{animation: none;}
+  &~ .progress-bar{
+    opacity: 0;
+    transition: 1s;
+  }
+  &~ .progress-bar::before{
+    animation: none;
+  }
+  &~.slider-btn.sl-2{
+    animation: none;
+    z-index: 99;
+  }
+  &~.play-button{display: block; z-index: 100;}
+}
+
+#sl-st-before:target{
+  &~ .slider-nd-fig{ animation: slider1PreviousAnimation 1s ease forwards;}
+  &~ .slider-btn.sl-2 {z-index: 99;}
+}
+
+#sl-st-after:target{
+ &~ .slider-nd-fig{ animation: slider1NextAnimation 1s ease forwards;}
+ &~ .slider-btn.sl-2 {z-index: 99;}
+}
+
+#sl-nd-before:target{
+ &~ .slider-nd-fig{ animation: slider2PreviousAnimation 1s ease forwards;}
+ &~ .slider-btn.sl-2 {z-index: -99;}
+}
+
+#sl-nd-after:target{
+ &~ .slider-nd-fig{ animation: slider2NextAnimation 1s ease forwards;}
+ &~ .slider-btn.sl-2 {z-index: -99;}
+}
+
+
 /* PROJECTS
 - Manage menu-btn - Same as header menu :
 - Allworks category is allways selected except when another category is seleted

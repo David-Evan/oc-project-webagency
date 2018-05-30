@@ -22,6 +22,15 @@
 <div id="Home" class="anchor"></div>
 <!-- SECTION : SLIDER -->
 <header class="layout l-slider">
+
+  <!-- Anchors use to manage slider with controls -->
+  <div id="sl-st-before" class="slider-control anchor"></div>
+  <div id="sl-st-after" class="slider-control anchor"></div>
+
+  <div id="sl-nd-before" class="slider-control anchor"></div>
+  <div id="sl-nd-after" class="slider-control anchor"></div>
+
+  <!-- First slide -->
   <div class="slider-st-fig">
     <div class="slider-baseline">
       <h1 class="slider-baseline-title"><strong>WebAgency</strong> : l'agence de tous vos projets !</h1>
@@ -29,10 +38,8 @@
       <p class="slider-baseline-link"><a href="#Services" class="btn">Plus d'infos</a></p>
     </div>
   </div>
-  <!--
-  <div id="nd-before" class="slider-control anchor"></div>
-  <div id="nd-after" class="slider-control anchor"></div>
-  -->
+
+  <!-- Second slide -->
   <div class="slider-nd-fig">
     <div class="slider-baseline">
       <h1 class="slider-baseline-title"><strong>42 Projets réussis</strong> : Et autant de client satisfaits</h1>
@@ -40,9 +47,17 @@
       <p class="slider-baseline-link"><a href="#Projects" class="btn">Voir nos réalisation</a></p>
     </div>
   </div>
-  <span class="progress-bar"></span>
-  <span class="slider-btn slider-before"><a href="#" class="full-size"><i class="fa fa-chevron-left"></i></a></span>
-  <span class="slider-btn slider-after"><a href="#" class="full-size"><i class="fa fa-chevron-right"></i></a></span>
+  <div class="progress-bar"></div>
+
+  <!-- Controls of slides -->
+  <div class="slider-btn slider-before sl-1"><a href="#sl-st-before" class="full-size"><i class="fa fa-chevron-left"></i></a></div>
+  <div class="slider-btn slider-after sl-1"><a href="#sl-st-after" class="full-size"><i class="fa fa-chevron-right"></i></a></div>
+
+  <div class="slider-btn slider-before sl-2"><a href="#sl-nd-before" class="full-size"><i class="fa fa-chevron-left"></i></a></div>
+  <div class="slider-btn slider-after sl-2"><a href="#sl-nd-after" class="full-size"><i class="fa fa-chevron-right"></i></a></div>
+
+  <!-- "Play" button -->
+  <div class="play-button"><a href="#" class="full-size"><span class="fa fa-play"></span></a></div>
 </header>
 
 <div class="section-separator"></div>
@@ -104,77 +119,77 @@
     </nav>
     <div class="project-list">
 
-      <div class="project-elements category-creative">
-        <img src="assets/images/portfolio/01.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-creative">
+        <img src="assets/images/portfolio/01.jpg" alt="Une paire de lunettes avec des moustaches">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Crative - #Lunettes</em>
           <br>Une jolie paire de lunettes.</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-portfolio">
-        <img src="assets/images/portfolio/02.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-portfolio">
+        <img src="assets/images/portfolio/02.jpg" alt="Un homme jaune déguisé dans un costume de lapin">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Portfolio - #Lapin</em>
           <br>Un simpson déguisé en lapin.</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-portfolio">
-        <img src="assets/images/portfolio/03.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-portfolio">
+        <img src="assets/images/portfolio/03.jpg" alt="Logo Orginal Pompadour">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Portfolio - #Pompadour</em>
           <br>Original Pompadour since 1950.</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-creative">
-        <img src="assets/images/portfolio/04.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-creative">
+        <img src="assets/images/portfolio/04.jpg" alt="Une maquette papier d'un projet">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Crative - #Maquette</em>
           <br>Une maquette bien ordonnée.</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-portfolio">
-        <img src="assets/images/portfolio/05.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-portfolio">
+        <img src="assets/images/portfolio/05.jpg" alt="Deux sacs de shopping noir et blanc">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Portfolio - #Shopping</em>
           <br>Credit cards ready ?</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-corporate">
-        <img src="assets/images/portfolio/06.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-corporate">
+        <img src="assets/images/portfolio/06.jpg" alt="Un dessin de paysage de ville">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Corporate - #NoManSky</em>
           <br>Un paysage bien sympa !</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-corporate">
-        <img src="assets/images/portfolio/07.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-corporate">
+        <img src="assets/images/portfolio/07.jpg" alt="Une fusée en dessin au décolage">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Corporate - #SpaceX</em>
           <br>Little step for a man but ...</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
-      <div class="project-elements category-creative">
-        <img src="assets/images/portfolio/08.jpg" alt="Une image">
-        <div class="project-infos">
+      <figure class="project-elements category-creative">
+        <img src="assets/images/portfolio/08.jpg" alt="Un CV sur un bureau remplit d'outils de création artistique">
+        <figcaption class="project-infos">
           <span class="fa fa-eye eye-look"></span>
           <p><em>Creative - #C.V</em>
           <br>Livrée avec sa boîte à outil complette.</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
     </div>
   </div>
