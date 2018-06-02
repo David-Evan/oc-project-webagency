@@ -1,3 +1,8 @@
+
+/**
+* START MODULE : dt-decoration
+* Create dt-decoration element
+*/
 $dt-deco_large-circle-color:       #d7d7d7;
 $dt-deco_1st-circle-color:         $global_primary-color;
 $dt-deco_2nd-circle-color :        #fff;
@@ -42,3 +47,6 @@ $dt-deco_fa-color :                $global_primary-color;
     // SECOND CIRCLE
     &::before{border: solid $dt-deco_2nd-circle-size $dt-deco_2nd-circle-color;}
 }
+/**
+* END MODULE : dt-decoration
+*/

@@ -1,3 +1,8 @@
+
+/**
+* START : RESPONSIVES EVENTS
+* Regroups responsives events associated with their listeners
+*/
 @media screen and (max-width: 740px){
   #Services:target ~ .l-header #Item-Services,
   #Projects:target ~ .l-header #Item-Projects,
@@ -36,3 +41,6 @@
   	}
   }
 }
+/**
+* END : RESPONSIVES EVENTS
+*/

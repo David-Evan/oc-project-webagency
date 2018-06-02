@@ -1,6 +1,9 @@
 
-/* Big desktop screen (Full HD) */
-/* Tiny optimisation */
+/**
+* START : RESPONSIVE
+* Described responsives modifications
+*/
+/* Big desktop screen (Full HD) - Tiny optimisation */
 @media screen and (min-width:1600px){
   /**** BASE ****/
     .section-header{width: 45%;}
@@ -38,6 +41,8 @@
 @media screen and (max-width: 740px) {
 
 /**** BASE ****/
+p, dt, dd, li, .btn {font-size: 1.35em;}
+h1{font-size: 2.2em;}
 
   .section-header{width: 85%;}
 
@@ -63,7 +68,16 @@
         &:hover{color:$global_menu-hover-color}
       }
     }
-    
+
+/**** SLIDER ****/
+  .slider-baseline {
+    margin-top: 110px;
+    width: 480px;
+    .slider-baseline-subtitle{margin-top: 60px;}
+    .slider-baseline-link{margin-top:80px;}
+  }
+
+
 /**** CONTACT ****/
   .contact-area {
     margin-left: auto;
@@ -71,3 +85,6 @@
     left: 0; right: 0;
   }
 }
+/**
+* END : RESPONSIVE
+*/

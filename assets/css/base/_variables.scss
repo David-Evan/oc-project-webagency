@@ -1,8 +1,9 @@
 
 
-// Text colors
+// Text colors & size
 $global_primary-text-color:                      #65696e;
 $global_alternate-text-color :                   #fff;
+$global_text_font-size:                          0.90em;
 
 // Theme colors
 $global_primary-color :                          #5cadd3;
@@ -10,7 +11,7 @@ $global_darken-primary-color:                    darken($global_primary-color, 1
 
 $global_background-color :                       #fff;
 
-//Title Colors
+//Title Colors & size
 $global_h1-text-color:                           #000;
 $global_h1-alternate-text-color :                #fff;
 $global_h1-font-size:                            2em;

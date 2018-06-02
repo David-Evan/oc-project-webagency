@@ -1,3 +1,8 @@
+
+/**
+* START MODULE : menu-btn
+* Create menu-btn element
+*/
 $btn-menu_background-color: 					   	#e5e5e5;
 $btn-menu_font-color : 							      $global_primary-text-color;
 
@@ -12,6 +17,14 @@ $btn-menu_btn-height : 							      40px;
 $btn-menu_font-size : 										14px;
 
 $btn-menu_border-size: 							      3px;
+
+.project-menu{
+	display: flex;
+	justify-content: center;
+
+	margin-top: 60px;
+	margin-bottom: 50px;
+}
 
 .menu-btn{
 	display: flex;
@@ -59,3 +72,7 @@ $btn-menu_border-size: 							      3px;
 }
 
 .menu-btn-anchor{visibility: hidden;position: fixed; top: 0; right: 0;}
+
+/**
+* END MODULE : menu-btn
+*/

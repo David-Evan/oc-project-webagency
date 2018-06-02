@@ -1,9 +1,12 @@
+
+/**
+* START MODULE : slider
+* Described slider section style
+*/
 $slider_animation-duration : 14s;
 $slider_btn-size : 70px;
 
 /*START SLIDERS ANIMATIONS */
-
-
 @keyframes sliderAnimation {
 0%, 35% {left: -100%;}
 50%, 85%{left:0%;}
@@ -137,3 +140,6 @@ $slider_btn-size : 70px;
 }
 
 .slider-baseline, .slider-baseline-title{color: $global_alternate-text-color;}
+/**
+* END MODULE : slider
+*/

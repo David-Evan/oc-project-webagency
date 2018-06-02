@@ -1,10 +1,15 @@
 
-/* BASE */
-*{margin: 0; padding: 0;}
+/**
+* START : BASE
+* Described the basic elements style, like <p>, <h1> etc... and "generic" class
+*/
+
+/* MAIN */
+*{margin: 0; padding: 0;  max-width: 100%;}
 
 html{
   font-family: Roboto, sans-serif;
-  font-size: 0.90em;
+  font-size: $global_text_font-size;
   line-height: 24px;
   color: $global_primary-text-color;
   background-color: $global_background-color;
@@ -79,3 +84,7 @@ textarea{
   position: absolute;
   top: 0; right: 0;
 }
+
+/**
+* END : BASE
+*/

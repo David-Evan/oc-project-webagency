@@ -1,9 +1,13 @@
+
+/**
+* START MODULE : eye-look
+* Create eye-look element
+*/
 $eye-look_circle-color :           #4692b1;
 $eye-look_border-color :           #fff;
 
 $eye-look_circle-size :            37px;
 $eye-look_border-size :            1px; // relative to the first one
-
 
 .eye-look
 {
@@ -20,3 +24,6 @@ $eye-look_border-size :            1px; // relative to the first one
   color: $eye-look_border-color;
   line-height: $eye-look_circle-size;
 }
+/**
+* END MODULE : eye-look
+*/

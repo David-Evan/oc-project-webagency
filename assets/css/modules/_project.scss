@@ -1,3 +1,8 @@
+
+/**
+* START MODULE : project
+* Described project section style
+*/
 $project_elements-width : 261px;
 $project_elements-height : 174px;
 
@@ -27,7 +32,7 @@ $project_infos-height : 62px;
 
 .project-infos{
   display: block;
-  
+
   position: absolute;
   margin-top:-69px;
 
@@ -55,3 +60,6 @@ $project_infos-height : 62px;
 .project-elements:hover .project-infos {
   opacity :1;
 }
+/**
+* END MODULE : project
+*/

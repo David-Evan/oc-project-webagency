@@ -1,6 +1,11 @@
 
+/**
+* START : EVENT
+* Add listeners with "target" selector and their associates changes.
+*/
+
 /* HEADER MENU */
-// Item Home is allways active except when another one is selected
+/* Item Home is allways active except when another one is selected */
 #Services:target ~ .l-header #Item-Services,
 #Projects:target ~ .l-header #Item-Projects,
 #Contact:target ~ .l-header #Item-Contact,{
@@ -17,8 +22,7 @@
     }
   }
 
-
-// Select project Menu when a category is selected
+/* Select project Menu when a category (Menu-Btn) is selected */
 #Cat-Allworks:target,
 #Cat-Creative:target,
 #Cat-Corporate:target,
@@ -35,9 +39,8 @@
 	}
 }
 
-
 /* SLIDERS
-  - Manage controls, progress-bar and slide function of user interactions
+  - Manage controls, progress-bar and slide, function of user interactions
 */
 
 /* For slides, controls, and progress-bar when a click is detected:
@@ -79,7 +82,6 @@
  &~ .slider-btn.sl-2 {z-index: -99;}
 }
 
-
 /* PROJECTS
 - Manage menu-btn - Same as header menu :
 - Allworks category is allways selected except when another category is seleted
@@ -112,6 +114,8 @@
 #Cat-Creative:target ~ #Projects .project-content .project-list .project-elements:not(.category-creative),
 #Cat-Corporate:target ~ #Projects .project-content .project-list .project-elements:not(.category-corporate),
 #Cat-Portfolio:target ~ #Projects .project-content .project-list .project-elements:not(.category-portfolio)
-{
-  display: none;
-}
+{display: none;}
+
+/**
+* END : EVENT
+*/

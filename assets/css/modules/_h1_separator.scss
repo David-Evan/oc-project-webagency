@@ -1,3 +1,8 @@
+
+/**
+* START MODULE : h1-separator
+* Create h1-separator element
+*/
 $h1-sep_border-color:             #ebebeb;
 $h1-sep_1st-circle-color:         $global_primary-color;
 $h1-sep_2nd-circle-color :        #fff;
@@ -36,3 +41,7 @@ $h1-sep_2nd-circle-size :         5px; // relative to the first one
     border: solid $h1-sep_2nd-circle-size $h1-sep_2nd-circle-color;
   }
 }
+/**
+* END MODULE : h1-separator
+* Create h1-separator element
+*/
